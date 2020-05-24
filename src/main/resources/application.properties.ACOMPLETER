@@ -1,0 +1,8 @@
+spring.thymeleaf.cache=false
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.url= A compléter
+spring.datasource.username= A compléter
+spring.datasource.password=ENC(A compléter)
+jasypt.encryptor.algorithm=PBEWITHMD5ANDDES
+jasypt.encryptor.iv-generator-classname=org.jasypt.iv.NoIvGenerator
+jasypt.encryptor.password= A compléter

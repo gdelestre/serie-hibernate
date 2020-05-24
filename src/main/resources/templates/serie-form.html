@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mise à jour</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+    <style>
+       .error {color:red}
+    </style>
+</head>
+
+<body>
+
+<div>
+    <h3>Sauvegarder ou modifier une série</h3>
+    <br>
+    <form th:action="@{/saveOrUpdate}" modelAttribute="serie" method="post">
+        <!-- Besoin d'afficher l'ID pour l'associer à la série-->
+        <input type="number" name="id" th:value="${serie.id}" style="display:none;"/>
+
+        <div class="form-group mx-4">
+            <label>Nom :</label>
+            <input type="text" name="nom" th:value="${serie.nom}" class="form-control" style="width:300px;"/>
+            <span th:if="${#fields.hasErrors('serie.nom')}" th:errors="*{serie.nom}"
+                  th:errorclass="error"/>
+        </div>
+        <div class="form-group mx-4">
+            <label>Dernière saison vue :</label>
+            <input type="text" name="derniereSaison" th:value="${serie.derniereSaison}" class="form-control"
+                   style="width:300px;"/>
+            <span th:if="${#fields.hasErrors('serie.derniereSaison')}" th:errors="*{serie.derniereSaison}"
+                  th:errorclass="error"/>
+        </div>
+        <div class="form-group mx-4">
+            <label>Disponibilité de la prochaine saison :</label>
+            <input type="text" name="prochaineSaison" th:value="${serie.prochaineSaison}" class="form-control"
+                   style="width:300px;"/>
+            <span th:if="${#fields.hasErrors('serie.prochaineSaison')}" th:errors="*{serie.prochaineSaison}"
+                  th:errorclass="error"/>
+        </div>
+        <div class="form-group mx-4">
+            <label>Provenance :</label>
+            <input type="text" name="provenance" th:value="${serie.provenance}" class="form-control"
+                   style="width:300px;"/>
+            <span th:if="${#fields.hasErrors('serie.provenance')}" th:errors="*{serie.provenance}"
+                  th:errorclass="error"/>
+        </div>
+        <label></label>
+
+        <button type="submit" class="btn btn-primary m-4"/>
+        Sauvegarder</button>
+
+    </form>
+    <div style="clear" ;both;>
+        <br>
+    </div>
+    <p>
+        <a href="list">Retour à la liste</a>
+    </p>
+</div>
+</body>
+</html>
