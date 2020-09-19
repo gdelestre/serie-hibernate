@@ -2,16 +2,9 @@ package fr.springboot.serie_hibernate.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 
 @Entity

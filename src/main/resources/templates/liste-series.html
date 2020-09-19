@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -16,9 +16,9 @@
         <div class="col-sm-11  mt-2">
             <h3>Liste des séries pour : </h3>
         </div>
-        <div class="col-sm-1 mt-2" >
+        <div class="col-sm-1 mt-2">
             <form th:action="@{/logout}" method="post">
-                <input class="btn btn-primary text-right" type="submit" value="Déconnexion" />
+                <input class="btn btn-primary text-right" type="submit" value="Déconnexion"/>
             </form>
         </div>
     </div>
@@ -26,7 +26,7 @@
 
 
 <ul th:each="personne : ${personnes}">
-    <li class ="liste" th:text="${personne.prenom}"></li>
+    <li class="liste" th:text="${personne.prenom}"></li>
     <table class="table table-bordered">
         <thead class="thead-light">
         <tr>
@@ -56,7 +56,7 @@
 </ul>
 <br>
 <ul>
-    <li class ="liste">Séries en Couple :</li>
+    <li class="liste">Séries en Couple :</li>
     <table class="table table-bordered">
         <thead class="thead-light">
         <tr>
@@ -81,8 +81,6 @@
     <a th:href="@{/addSerie(personneId=0)}">Nouvelle Série</a>
 
 </ul>
-
-
 
 </body>
 </html>

@@ -1,13 +1,13 @@
 package fr.springboot.serie_hibernate.dao;
 
-import java.util.List;
-import javax.persistence.EntityManager;
-
 import fr.springboot.serie_hibernate.entity.Serie;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class SerieDAOImpl implements SerieDAO {
@@ -19,7 +19,7 @@ public class SerieDAOImpl implements SerieDAO {
     }
 
     public List<Serie> findSolo() {
-        Session currentSession = (Session)this.entityManager.unwrap(Session.class);
+        Session currentSession = this.entityManager.unwrap(Session.class);
         Query<Serie> maRequete =
                 currentSession.createQuery("SELECT s FROM Serie s where size(s.lesPersonnes) = 1 " +
                         "order by s.prochaineSaison, s.nom", Serie.class);
@@ -28,7 +28,7 @@ public class SerieDAOImpl implements SerieDAO {
     }
 
     public List<Serie> findDuo() {
-        Session currentSession = (Session)this.entityManager.unwrap(Session.class);
+        Session currentSession = this.entityManager.unwrap(Session.class);
         Query<Serie> maRequete =
                 currentSession.createQuery("SELECT s FROM Serie s where size(s.lesPersonnes) = 2 " +
                         "order by s.prochaineSaison, s.nom", Serie.class);
@@ -37,13 +37,13 @@ public class SerieDAOImpl implements SerieDAO {
     }
 
     public Serie findById(int id) {
-        Session currentSession = (Session)this.entityManager.unwrap(Session.class);
-        Serie maSerie = (Serie)currentSession.get(Serie.class, id);
+        Session currentSession = this.entityManager.unwrap(Session.class);
+        Serie maSerie = currentSession.get(Serie.class, id);
         return maSerie;
     }
 
     public void saveOrUpdate(Serie maSerie) {
-        Session currentSession = (Session)this.entityManager.unwrap(Session.class);
+        Session currentSession = this.entityManager.unwrap(Session.class);
         currentSession.saveOrUpdate(maSerie);
     }
 

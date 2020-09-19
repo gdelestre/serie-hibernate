@@ -10,11 +10,11 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 public class SerieHibernateApplication extends SpringBootServletInitializer {
 
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(new Class[]{SerieHibernateApplication.class});
-	}
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(new Class[]{SerieHibernateApplication.class});
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(SerieHibernateApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SerieHibernateApplication.class, args);
+    }
 }

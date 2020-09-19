@@ -93,10 +93,10 @@ public class PrincipalController {
                     lesVisionneurs = this.personneService.findAll();
                 } else {
                     Personne visionneur = this.personneService.findById(this.idVisionneur);
-                    ((List)lesVisionneurs).add(visionneur);
+                    ((List) lesVisionneurs).add(visionneur);
                 }
 
-                laSerie.setLesPersonnes((List)lesVisionneurs);
+                laSerie.setLesPersonnes((List) lesVisionneurs);
                 this.serieService.saveOrUpdate(laSerie);
             }
 
